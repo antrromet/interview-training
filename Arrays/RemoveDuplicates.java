@@ -13,9 +13,12 @@ public class RemoveDuplicates {
 		}
 		
 		removeDuplicatesLinkedHashSet(a);
+		
+		removeDuplicatesInPlace(a);
 	}
 	
 	private static void removeDuplicatesLinkedHashSet(int[] a){
+		System.out.println("Using LinkedHashSet");
 		Set<Integer> set = new LinkedHashSet<Integer>();
 		int duplicatesCount = 0;
 		for(int i=0;i<a.length;i++){
@@ -31,6 +34,42 @@ public class RemoveDuplicates {
 		for(Integer x : set){
 			b[i++] = x;
 			System.out.print(x+" ");	
+		}
+		System.out.println();
+	}
+	
+	private static void removeDuplicatesInPlace(int[] a){
+		System.out.println("In place:");
+		int duplicatesCount = 0;
+		for(int i=0;i<a.length;i++){
+			for(int j=i+1;j<a.length-duplicatesCount;j++){
+				if(a[j] == a[i]){
+					int k = j;
+					while(k!=a.length-duplicatesCount-1){
+						a[k] = a[k+1];
+						k++;
+					}
+					duplicatesCount++;
+					j--;
+				}
+			}
+		}
+		
+		System.out.println("Duplicates: "+duplicatesCount);
+		
+		printArray(a, a.length-duplicatesCount);
+	}
+	
+	private static void printArray(int[] a){
+		for(Integer x: a){
+			System.out.print(x+" ");
+		}
+		System.out.println();
+	}
+	
+	private static void printArray(int[] a, int n){
+		for(int i=0;i<n;i++){
+			System.out.print(a[i]+" ");
 		}
 		System.out.println();
 	}
