@@ -1,12 +1,12 @@
 import java.util.Map;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class FirstNonRepeatChar {
 
 	public static void main(String[] args){
 		String str = args[0];
 		printFirstNonRepeatCharacterArray(str);
-		printFirstNonRepeatCharacterHashMap(str);
+		printFirstNonRepeatCharacterLinkedHashMap(str);
 	}
 	
 	private static void printFirstNonRepeatCharacterArray(String str){
@@ -26,9 +26,9 @@ public class FirstNonRepeatChar {
 		}
 	}
 	
-	private static void printFirstNonRepeatCharacterHashMap(String str){
+	private static void printFirstNonRepeatCharacterLinkedHashMap(String str){
 		System.out.println("Using HashMap:");
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
 		for(int i=0;i<str.length();i++){
 			char ch = str.charAt(i);
 			int value = 1;
