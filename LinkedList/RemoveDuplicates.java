@@ -69,8 +69,6 @@ public class RemoveDuplicates {
 		}
 	}
 	
-	
-	
 	private Node insert(Node head, int n){
 		if(head == null){
 			Node node = new Node(n);
