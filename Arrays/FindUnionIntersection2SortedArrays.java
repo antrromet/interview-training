@@ -60,6 +60,7 @@ public class FindUnionIntersection2SortedArrays {
 		while(i<a.length && j<b.length){
 			if(a[i]  == b[j]){
 				c[k++] = a[i++];
+				j++;
 				intersectionCount++;
 			} else if(a[i] > b[j]){
 				j++;
