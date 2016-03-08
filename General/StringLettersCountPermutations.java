@@ -19,7 +19,7 @@ public class StringLettersCountPermutations {
 		List<String> list = new ArrayList<String>();
 		for(int i=0;i<str.length()-1;i++){
 			for(int j=str.length()-1;j>i+1;j--){
-				list.add(getString(i, j, str));
+				list.add(getStringBySubstring(i, j, str));
 			}
 		}
 		list.add(str);
@@ -38,5 +38,9 @@ public class StringLettersCountPermutations {
 			builder.append(str.charAt(x++));
 		}
 		return builder.toString();
+	}
+	
+	private String getStringBySubstring(int i, int j, String str){
+		return str.substring(0,i+1)+(j-i-1)+str.substring(j);
 	}
 }
