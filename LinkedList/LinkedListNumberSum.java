@@ -62,12 +62,14 @@ public class LinkedListNumberSum {
 		System.out.println("Summation forwards: ");
 		int l1 = length(h1);
 		int l2 = length(h2);
+		int len = 0;
 		if(l1 > l2){
 			h2 = padZeroes(l1-l2, h2);
+			len = l1;
 		} else if(l2>l1){
 			h1 = padZeroes(l2-l1, h1);
+			len = l2;
 		}
-		int len = length(h1);
 		Stack<Integer> stack = new Stack<Integer>();
 		while(len!=0){
 			stack.push(h1.data+h2.data);

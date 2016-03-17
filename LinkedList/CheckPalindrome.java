@@ -15,12 +15,12 @@ public class CheckPalindrome {
 		cp.insert(2);
 		cp.insert(7);
 		cp.printList();
-		cp.checkPlaindrome();
+		cp.checkPalindrome();
 	}
 	
-	private void checkPlaindrome(){
-		boolean isPalindrome = checkPalindromeReverse(head);
-		System.out.println("It is"+(isPalindrome?"":" not")+" a palindrome");
+	private void checkPalindrome(){
+// 		boolean isPalindrome = checkPalindromeReverse(head);
+// 		System.out.println("It is"+(isPalindrome?"":" not")+" a palindrome");
 	
 		isPalindrome = checkPalindromeStack(head);
 		System.out.println("It is"+(isPalindrome?"":" not")+" a palindrome");
