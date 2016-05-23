@@ -9,8 +9,10 @@ public class TestStack {
 		while(true){
 			System.out.println("1. Push");
 			System.out.println("2. Pop");
-			System.out.println("3. Display");
-			System.out.println("4. Exit");
+			System.out.println("3. IsEmpty");
+			System.out.println("4. Size");
+			System.out.println("5. Display");
+			System.out.println("6. Exit");
 			System.out.print("Enter your choice: ");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String in = br.readLine();
@@ -36,9 +38,13 @@ public class TestStack {
 							System.out.print("Popped: "+pop);	
 						}
 						break;
-				case 3: stack.display();
+				case 3: System.out.println("IsEmpty: "+stack.isEmpty());	
 						break;
-				case 4: System.exit(0);
+				case 4: System.out.println("Size: "+stack.size());	
+						break;
+				case 5: stack.display();
+						break;
+				case 6: System.exit(0);
 				default: System.out.println("Invalid Input!");
 						break;
 			}

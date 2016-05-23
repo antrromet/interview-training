@@ -9,8 +9,10 @@ public class TestQueue {
 		while(true){
 			System.out.println("1. Enqueue");
 			System.out.println("2. Dequeue");
-			System.out.println("3. Display");
-			System.out.println("4. Exit");
+			System.out.println("3. IsEmpty");
+			System.out.println("4. Size");
+			System.out.println("5. Display");
+			System.out.println("6. Exit");
 			System.out.print("Enter your choice: ");
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String in = br.readLine();
@@ -36,9 +38,13 @@ public class TestQueue {
 							System.out.println("Dequeued: "+pop);	
 						}
 						break;
-				case 3: queue.display();
+				case 3: System.out.println("IsEmpty: "+queue.isEmpty());	
 						break;
-				case 4: System.exit(0);
+				case 4: System.out.println("Size: "+queue.size());	
+						break;
+				case 5: queue.display();
+						break;
+				case 6: System.exit(0);
 				default: System.out.println("Invalid Input!");
 						break;
 			}

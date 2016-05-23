@@ -28,6 +28,20 @@ public class Queue<Item> {
 		return n.item;
 	}
 	
+	public boolean isEmpty(){
+		return rear == null;
+	}
+	
+	public int size(){
+		int size = 0;
+		Node n = front;
+		while(n!=null){
+			n = n.next;
+			size+=1;
+		}
+		return size;
+	}
+	
 	public void display(){
 		Node n = front;
 		if(n == null){

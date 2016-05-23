@@ -12,6 +12,30 @@ public class Stack<Item> {
 		}
 	}
 	
+	public Item pop(){
+		if(top == null){
+			System.out.println("Underflow!!!");
+			return null;
+		}
+		Node n = top;
+		top = top.next;
+		return n.data;
+	}
+	
+	public boolean isEmpty(){
+		return top == null;
+	}
+	
+	public int size(){
+		int size = 0;
+		Node n = top;
+		while(n!=null){
+			n = n.next;
+			size+=1;
+		}
+		return size;
+	}
+	
 	public void display(){
 		Node n = top;
 		if(n == null){
@@ -24,16 +48,6 @@ public class Stack<Item> {
 			System.out.println(n.data);
 			n = n.next;
 		}
-	}
-	
-	public Item pop(){
-		if(top == null){
-			System.out.println("Underflow!!!");
-			return null;
-		}
-		Node n = top;
-		top = top.next;
-		return n.data;
 	}
 
 	class Node {
