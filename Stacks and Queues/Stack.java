@@ -49,6 +49,13 @@ public class Stack<Item> {
 			n = n.next;
 		}
 	}
+	
+	public Item peek() {
+		if(isEmpty()) {
+			return null;
+		}
+		return top.data;
+	}
 
 	class Node {
 		private Node next;
