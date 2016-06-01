@@ -20,13 +20,15 @@ public class MergeSort {
 			int mid = (low+high)/2;
 			sort(a, aux, low, mid);
 			sort(a, aux, mid+1, high);
-			merge(a, aux, low, mid, high);
+			if(a[mid] > a[mid+1]){
+				merge(a, aux, low, mid, high);
+			}
 		}
 	}
 	
 	private static void merge(int[] a, int[] aux, int low, int mid, int high) {
-		for(int i=0;i<a.length;i++){
-			aux[i] = a[i];
+		for(int k=low;k<=high;k++){
+			aux[k] = a[k];
 		}
 		
 		int i = low;
@@ -37,7 +39,7 @@ public class MergeSort {
 				a[k] = aux[j++];
 			} else if(j > high){
 				a[k] = aux[i++];
-			} else if(a[i] > a[j]){
+			} else if(aux[i] > aux[j]){
 				a[k] = aux[j++];
 			} else {
 				a[k] = aux[i++];
